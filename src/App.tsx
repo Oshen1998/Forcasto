@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import BootSplash from 'react-native-bootsplash';
+import React from 'react';
+
 import {Provider} from 'react-redux';
 import {persistor, store} from './store';
 import {PersistGate} from 'redux-persist/integration/react';
@@ -12,16 +12,6 @@ import {ModalProvider} from 'react-native-modalfy';
 import {ModalStack} from './modal';
 
 function App(): React.JSX.Element {
-  useEffect(() => {
-    const init = async () => {
-      // …do multiple sync or async tasks
-    };
-
-    init().finally(async () => {
-      await BootSplash.hide({fade: true});
-    });
-  }, []);
-
   return (
     <GestureHandlerRootView style={style.container}>
       <Provider store={store}>

@@ -1,4 +1,5 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {createAction, createSlice} from '@reduxjs/toolkit';
+import {AppActionTypes} from './types';
 
 export interface AppState {
   count: number;
@@ -21,7 +22,11 @@ const AppSlice = createSlice({
   },
 });
 
-const appSagaActions = {};
+const appSagaActions = {
+  requestCurrentWeatherData: createAction(
+    AppActionTypes.REQUEST_CURRENT_WEATHER,
+  ),
+};
 
 export const AppActions = {
   ...AppSlice.actions,
