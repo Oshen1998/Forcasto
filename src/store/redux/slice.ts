@@ -10,6 +10,10 @@ export interface AppState {
     fontColor: string | ColorValue;
     backgroundColor: string | ColorValue;
   };
+  location: {
+    lat: number;
+    lon: number;
+  };
 }
 
 const initialState: AppState = {
@@ -37,6 +41,10 @@ const initialState: AppState = {
     backgroundColor: LightColors.Background.MORNING_MODE,
     fontColor: LightColors.Text.PRIMARY,
   },
+  location: {
+    lat: 0,
+    lon: 0,
+  },
 };
 
 const AppSlice = createSlice({
@@ -51,6 +59,12 @@ const AppSlice = createSlice({
       action: PayloadAction<{backgroundColor: string; fontColor: string}>,
     ) => {
       state.colors = action.payload;
+    },
+    setCoordinates: (
+      state,
+      action: PayloadAction<{lat: number; lon: number}>,
+    ) => {
+      state.location = action.payload;
     },
   },
 });

@@ -19,7 +19,7 @@ const sagaMiddleware = createSagaMiddleware();
 const Configs = {
   key: 'root',
   storage,
-  blacklist: ['general'], // Blacklisting the 'general' slice to prevent persistence
+  // blacklist: ['general'], // Blacklisting the 'general' slice to prevent persistence
 };
 
 // Combine reducers

@@ -1,4 +1,4 @@
-import {call, delay, put} from 'typed-redux-saga';
+import {call, delay, put, select} from 'typed-redux-saga';
 import {requestCurrentWeatherDataAPI} from '../../services/weather.service';
 import {AppActions} from '../redux/slice';
 import {
@@ -9,6 +9,7 @@ import {
 import {MODAL_STACK} from '../../modal/constants';
 import {ILoader} from '../../modal/modal.types';
 import {AxiosError} from 'axios';
+import {currentLocationSelector} from '../redux/selector';
 
 const showError = showGeneralErrorNotify?.();
 const showLoader = openBottomSheet<{payload: ILoader}>(MODAL_STACK.LOADER, {
@@ -21,7 +22,8 @@ const hideAll = hideAllBottomSheets?.();
 
 export function* fetchCurrentWeatherSaga() {
   try {
-    const response = yield* call(requestCurrentWeatherDataAPI);
+    const {lat, lon} = yield* select(currentLocationSelector);
+    const response = yield* call(requestCurrentWeatherDataAPI, lat, lon);
     yield* put(AppActions.setCurrentWeatherInfo(response.data));
   } catch (error) {
     if (error instanceof AxiosError) {
@@ -33,7 +35,8 @@ export function* fetchCurrentWeatherSaga() {
 export function* reloadCurrentWeatherSaga() {
   try {
     showLoader();
-    const response = yield* call(requestCurrentWeatherDataAPI);
+    const {lat, lon} = yield* select(currentLocationSelector);
+    const response = yield* call(requestCurrentWeatherDataAPI, lat, lon);
     yield* put(AppActions.setCurrentWeatherInfo(response.data));
     // No Need the Loader
     // Just add to show the bottomSheet Loader

@@ -12,13 +12,15 @@
   },
   "dependencies": {
     "react": "18.3.1",
-    "react-native": "0.75.4"
+    "react-native": "0.75.4",
+    "remove": "^0.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@babel/preset-env": "^7.20.0",
     "@babel/runtime": "^7.20.0",
     "@react-native-async-storage/async-storage": "^2.0.0",
+    "@react-native-community/geolocation": "^3.4.0",
     "@react-native/babel-preset": "0.75.4",
     "@react-native/eslint-config": "0.75.4",
     "@react-native/metro-config": "0.75.4",
@@ -42,6 +44,7 @@
     "react-native-config": "^1.5.3",
     "react-native-gesture-handler": "^2.20.0",
     "react-native-modalfy": "^3.5.4",
+    "react-native-permissions": "^4.1.5",
     "react-native-safe-area-context": "^4.11.0",
     "react-native-screens": "^3.34.0",
     "react-native-svg": "^15.7.1",
