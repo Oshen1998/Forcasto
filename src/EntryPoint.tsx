@@ -5,6 +5,9 @@ import {useAppSelector} from './hooks/useRedux';
 import {countValueSelector} from './store/redux/selector';
 import {STACK_SCREENS} from './navigation/NavigationStack';
 import navigationService from './navigation/navigationService';
+import AppText from './components/text/AppText';
+import {FONT_FAMILIES, FONT_SIZES} from './themes/fonts';
+import {LightColors} from './themes/colors';
 
 const EntryPoint = () => {
   //   const dispatch = useAppDispatch();
@@ -17,7 +20,20 @@ const EntryPoint = () => {
 
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>AppEntry: {count}</Text>
+      {/* <Text
+        style={{
+          fontFamily: FONT_FAMILIES.Manrope.Bold,
+          fontSize: FONT_SIZES.Subtitle,
+        }}>
+        AppEntry: {count}
+      </Text> */}
+      <AppText
+        textAlign="center"
+        fontFamily={FONT_FAMILIES.Manrope.Bold}
+        fontSize={FONT_SIZES.MediumTitle}
+        fontColor={LightColors.Text.ERROR}>
+        AppEntry: {count}
+      </AppText>
       <TouchableOpacity
         onPress={onHandlePressCount}
         style={{
