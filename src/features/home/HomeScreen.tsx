@@ -1,5 +1,11 @@
-import {Image, ScrollView, StyleSheet, View} from 'react-native';
-import React, {useEffect, useMemo} from 'react';
+import {
+  Image,
+  RefreshControl,
+  ScrollView,
+  StyleSheet,
+  View,
+} from 'react-native';
+import React, {useEffect, useMemo, useState} from 'react';
 import {images} from '../../themes/images';
 import {LightColors} from '../../themes/colors';
 import Header from '../../components/header/Header';
@@ -22,7 +28,7 @@ const HomeScreen = () => {
   const dispatch = useAppDispatch();
   const colors = useAppSelector(appColorSelector);
   const {weather, main, wind} = useAppSelector(currentWeatherInfoSelector);
-
+  const [refreshing, setRefreshing] = useState(false);
   const currentTime = new Date();
   const currentHour = currentTime.getHours();
 
@@ -52,6 +58,14 @@ const HomeScreen = () => {
       );
     }
   }, [currentHour, dispatch]);
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    dispatch(AppActions.reloadCurrentWeatherData());
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 2000);
+  };
 
   const changeImage = useMemo(() => {
     if (weather && weather.length > 0) {
@@ -88,6 +102,9 @@ const HomeScreen = () => {
     <View style={[style.container, {backgroundColor: colors.backgroundColor}]}>
       <Header colors={colors} />
       <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
         showsVerticalScrollIndicator={false}
         contentContainerStyle={style.scroll}>
         <View style={style.imageContainer}>
@@ -98,16 +115,19 @@ const HomeScreen = () => {
           />
         </View>
         <AppText
+          testId="home-today"
           textAlign="center"
           style={[style.description, {color: colors.fontColor}]}>
           {today}
         </AppText>
         <AppText
+          testId="home-temperature"
           textAlign="center"
           style={[style.temperature, {color: colors.fontColor}]}>
           {temperature} C°
         </AppText>
         <AppText
+          testId="home-weather"
           textAlign="center"
           style={[style.description, {color: colors.fontColor}]}>
           {capitalize(weather[0]?.main) ?? ''}

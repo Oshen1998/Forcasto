@@ -53,6 +53,7 @@ const Header = ({colors}: HeaderProps) => {
     <View style={[styles.container, {paddingTop: insets.top + 20}]}>
       <StatusBar translucent backgroundColor={LightColors.TRANSPARENT} />
       <TouchableOpacity
+        testID="location-button"
         onPress={onHandlePressLocation}
         style={styles.searchLocation}>
         <Image
@@ -61,6 +62,7 @@ const Header = ({colors}: HeaderProps) => {
           style={[styles.location, {tintColor: colors.fontColor}]}
         />
         <AppText
+          testId="header-country"
           textAlign="left"
           style={[styles.headerText, {color: colors.fontColor}]}>
           {name} ({sys.country})
@@ -72,6 +74,7 @@ const Header = ({colors}: HeaderProps) => {
         />
       </TouchableOpacity>
       <TouchableOpacity
+        testID="reload-button"
         onPress={onHandlePressReload}
         style={styles.searchLocation}>
         <Image

@@ -11,6 +11,7 @@ const AppLottie = (props: AppLottieProps) => {
   const {source, height, width} = props;
   return (
     <LottieView
+      testID="lottie"
       source={source}
       autoPlay
       loop

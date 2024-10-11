@@ -25,6 +25,7 @@ const Content = ({title, value, fontColor, icon}: ContentProps) => {
         resizeMode="contain"
       />
       <AppText
+        testId="content-id"
         textAlign="center"
         numberOfLines={2}
         ellipsizeMode="tail"

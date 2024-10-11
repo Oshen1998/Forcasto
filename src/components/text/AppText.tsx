@@ -36,6 +36,7 @@ type AppTextProps = {
   numberOfLines?: number;
   ellipsizeMode?: 'head' | 'middle' | 'tail' | 'clip';
   style?: StyleProp<TextStyle>;
+  testId: string;
 };
 
 const AppText = ({
@@ -48,9 +49,12 @@ const AppText = ({
   numberOfLines = 1,
   ellipsizeMode = 'tail',
   style,
+  testId,
 }: AppTextProps) => {
   return (
     <Text
+      testID={testId}
+      accessibilityLabel={testId}
       numberOfLines={numberOfLines}
       ellipsizeMode={ellipsizeMode}
       style={

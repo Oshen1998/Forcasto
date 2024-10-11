@@ -29,7 +29,11 @@ const GeneralLoader = ({modal}: LoaderModalProps) => {
       <View style={styles.animationContainer}>
         <AppLottie source={animations.cloudLoading} height={150} width={150} />
       </View>
-      <AppText textAlign="center" style={styles.desc} numberOfLines={2}>
+      <AppText
+        testId="general-loader-id"
+        textAlign="center"
+        style={styles.desc}
+        numberOfLines={2}>
         {params?.payload?.description ?? ''}
       </AppText>
     </View>

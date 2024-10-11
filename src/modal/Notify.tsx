@@ -39,10 +39,18 @@ const Notify = ({modal}: NotifyModalProps) => {
       <View style={styles.animationContainer}>
         <AppLottie source={animationLottie} height={150} width={150} />
       </View>
-      <AppText textAlign="center" style={styles.title} numberOfLines={2}>
+      <AppText
+        testId="notify-title"
+        textAlign="center"
+        style={styles.title}
+        numberOfLines={2}>
         {params?.payload?.title ?? ''}
       </AppText>
-      <AppText textAlign="center" style={styles.desc} numberOfLines={4}>
+      <AppText
+        testId="notify-title"
+        textAlign="center"
+        style={styles.desc}
+        numberOfLines={4}>
         {params?.payload?.description ?? ''}
       </AppText>
     </View>

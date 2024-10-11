@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppText Component renders correctly 1`] = `
+<Text
+  accessibilityLabel="default-text"
+  ellipsizeMode="tail"
+  numberOfLines={1}
+  style={
+    {
+      "color": "#000000",
+      "fontFamily": "Manrope-Medium",
+      "fontSize": 12,
+      "fontWeight": "300",
+      "textAlign": "center",
+    }
+  }
+  testID="default-text"
+>
+  Default Text
+</Text>
+`;
