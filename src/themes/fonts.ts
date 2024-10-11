@@ -1,4 +1,5 @@
 export const FONT_SIZES = {
+  SuperTitle: 64,
   HeroTitle: 40,
   BigTitle: 32,
   Title: 28,

@@ -33,3 +33,19 @@ export const hideBottomSheet = (stack: MODAL_STACK) =>
     1000,
     {leading: true, trailing: false},
   );
+
+export const showGeneralErrorNotify = () =>
+  debounce(
+    () => {
+      const {openModal} = modalfy();
+      openModal(MODAL_STACK.NOTIFY, {
+        payload: {
+          title: 'Something Went Wrong!',
+          description:
+            "We're currently investigating the issue. Thank you for your patience as we work to resolve it.",
+        },
+      });
+    },
+    1000,
+    {leading: true, trailing: false},
+  );

@@ -29,9 +29,6 @@ const GeneralLoader = ({modal}: LoaderModalProps) => {
       <View style={styles.animationContainer}>
         <AppLottie source={animations.cloudLoading} height={150} width={150} />
       </View>
-      {/* <AppText textAlign="center" style={styles.title} numberOfLines={2}>
-        {params?.payload?.title ?? ''}
-      </AppText> */}
       <AppText textAlign="center" style={styles.desc} numberOfLines={2}>
         {params?.payload?.description ?? ''}
       </AppText>

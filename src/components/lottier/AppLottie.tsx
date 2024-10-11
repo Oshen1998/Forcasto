@@ -1,6 +1,7 @@
 import React from 'react';
 import LottieView from 'lottie-react-native';
-type AppLottieProps = {
+
+export type AppLottieProps = {
   source: string;
   height: number;
   width: number;
