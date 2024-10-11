@@ -15,6 +15,8 @@
 		7699B88040F8A987B510C191 /* libPods-Forcasto-ForcastoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Forcasto-ForcastoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		892D43571DF7B81E7DEA5A2B /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AB4216AAB9F0237015672BAC /* PrivacyInfo.xcprivacy */; };
+		B11625C1F8EC4E2FA82BD615 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE7D4BD1EAF463EB7CB3D8D /* BootSplash.storyboard */; };
+		D7A74993B86747579EA640F1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93B965FADEB6440C97304F0A /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +47,9 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-Forcasto.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Forcasto.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Forcasto/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Forcasto-ForcastoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forcasto-ForcastoTests.release.xcconfig"; path = "Target Support Files/Pods-Forcasto-ForcastoTests/Pods-Forcasto-ForcastoTests.release.xcconfig"; sourceTree = "<group>"; };
+		93B965FADEB6440C97304F0A /* Colors.xcassets */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = Forcasto/Colors.xcassets; sourceTree = "<group>"; };
 		AB4216AAB9F0237015672BAC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Forcasto/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		DFE7D4BD1EAF463EB7CB3D8D /* BootSplash.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = BootSplash.storyboard; path = Forcasto/BootSplash.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -97,6 +101,8 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 				AB4216AAB9F0237015672BAC /* PrivacyInfo.xcprivacy */,
+				DFE7D4BD1EAF463EB7CB3D8D /* BootSplash.storyboard */,
+				93B965FADEB6440C97304F0A /* Colors.xcassets */,
 			);
 			name = Forcasto;
 			sourceTree = "<group>";
@@ -249,6 +255,8 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				892D43571DF7B81E7DEA5A2B /* PrivacyInfo.xcprivacy in Resources */,
+				B11625C1F8EC4E2FA82BD615 /* BootSplash.storyboard in Resources */,
+				D7A74993B86747579EA640F1 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
