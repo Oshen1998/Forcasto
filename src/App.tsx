@@ -8,6 +8,8 @@ import NavigationStack from './navigation/NavigationStack';
 import {navigationRef} from './navigation/navigationService';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {StyleSheet} from 'react-native';
+import {ModalProvider} from 'react-native-modalfy';
+import {ModalStack} from './modal';
 
 function App(): React.JSX.Element {
   useEffect(() => {
@@ -25,7 +27,9 @@ function App(): React.JSX.Element {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <NavigationContainer ref={navigationRef}>
-            <NavigationStack />
+            <ModalProvider stack={ModalStack}>
+              <NavigationStack />
+            </ModalProvider>
           </NavigationContainer>
         </PersistGate>
       </Provider>

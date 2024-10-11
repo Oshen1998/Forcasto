@@ -3,20 +3,27 @@ import React from 'react';
 // import {AppActions} from './store/redux/slice';
 import {useAppSelector} from './hooks/useRedux';
 import {countValueSelector} from './store/redux/selector';
-import {STACK_SCREENS} from './navigation/NavigationStack';
-import navigationService from './navigation/navigationService';
 import AppText from './components/text/AppText';
 import {FONT_FAMILIES, FONT_SIZES} from './themes/fonts';
 import {LightColors} from './themes/colors';
+import {openBottomSheet} from './utils/modal.utils';
+import {MODAL_STACK} from './modal/constants';
+import {ILoader} from './modal/modal.types';
 
 const EntryPoint = () => {
   //   const dispatch = useAppDispatch();
   const count = useAppSelector(countValueSelector);
 
-  const onHandlePressCount = () => {
-    // dispatch(AppActions.countIncrement());
-    navigationService.navigate(STACK_SCREENS.HOME);
-  };
+  const onHandlePressCount = openBottomSheet<{payload: ILoader}>(
+    MODAL_STACK.LOADER,
+    {
+      payload: {
+        title: 'Loading...',
+        description:
+          "Please hold on for just a moment. We're processing your request.",
+      },
+    },
+  );
 
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>

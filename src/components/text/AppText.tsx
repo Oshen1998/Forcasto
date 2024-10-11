@@ -1,4 +1,4 @@
-import {ColorValue, Text} from 'react-native';
+import {ColorValue, StyleProp, Text, TextStyle} from 'react-native';
 import React from 'react';
 import {FONT_FAMILIES} from '../../themes/fonts';
 
@@ -33,6 +33,9 @@ type AppTextProps = {
   fontColor?: ColorValue;
   textAlign: 'center' | 'left' | 'right';
   children: any;
+  numberOfLines?: number;
+  ellipsizeMode?: 'head' | 'middle' | 'tail' | 'clip';
+  style?: StyleProp<TextStyle>;
 };
 
 const AppText = ({
@@ -42,16 +45,23 @@ const AppText = ({
   fontFamily = FONT_FAMILIES.Manrope.Medium,
   children = '',
   textAlign = 'left',
+  numberOfLines = 1,
+  ellipsizeMode = 'tail',
+  style,
 }: AppTextProps) => {
   return (
     <Text
-      style={{
-        color: fontColor,
-        fontFamily: fontFamily,
-        fontSize: fontSize,
-        fontWeight: fontWeight,
-        textAlign: textAlign,
-      }}>
+      numberOfLines={numberOfLines}
+      ellipsizeMode={ellipsizeMode}
+      style={
+        style || {
+          color: fontColor,
+          fontFamily: fontFamily,
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          textAlign: textAlign,
+        }
+      }>
       {children}
     </Text>
   );

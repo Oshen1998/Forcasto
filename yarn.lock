@@ -2853,6 +2853,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lodash@npm:^4.17.10":
+  version: 4.17.10
+  resolution: "@types/lodash@npm:4.17.10"
+  checksum: 10c0/149b2b9fcc277204393423ed14df28894980c2322ec522fc23f2c6f7edef6ee8d876ee09ed4520f45d128adc0a7a6e618bb0017668349716cd99c6ef54a21621
+  languageName: node
+  linkType: hard
+
 "@types/node-forge@npm:^1.3.0":
   version: 1.3.11
   resolution: "@types/node-forge@npm:1.3.11"
@@ -3161,16 +3168,20 @@ __metadata:
     "@react-navigation/native-stack": "npm:^6.11.0"
     "@react-navigation/stack": "npm:^6.4.1"
     "@reduxjs/toolkit": "npm:^2.2.8"
+    "@types/lodash": "npm:^4.17.10"
     "@types/react": "npm:^18.2.6"
     "@types/react-test-renderer": "npm:^18.0.0"
     babel-jest: "npm:^29.6.3"
     eslint: "npm:^8.19.0"
     jest: "npm:^29.6.3"
+    lodash: "npm:^4.17.21"
+    lottie-react-native: "npm:^7.0.0"
     prettier: "npm:2.8.8"
     react: "npm:18.3.1"
     react-native: "npm:0.75.4"
     react-native-bootsplash: "npm:^6.1.4"
     react-native-gesture-handler: "npm:^2.20.0"
+    react-native-modalfy: "npm:^3.5.4"
     react-native-safe-area-context: "npm:^4.11.0"
     react-native-screens: "npm:^3.34.0"
     react-redux: "npm:^9.1.2"
@@ -5791,7 +5802,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.3.0":
+"hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.2":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
@@ -7225,6 +7236,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lottie-react-native@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "lottie-react-native@npm:7.0.0"
+  peerDependencies:
+    "@dotlottie/react-player": ^1.6.1
+    "@lottiefiles/react-lottie-player": ^3.5.3
+    react: "*"
+    react-native: ">=0.46"
+    react-native-windows: ">=0.63.x"
+  peerDependenciesMeta:
+    "@dotlottie/react-player":
+      optional: true
+    "@lottiefiles/react-lottie-player":
+      optional: true
+    react-native-windows:
+      optional: true
+  checksum: 10c0/f3f5562d231bae8aa66a69af857b1664f913b6d404a2fb4c98722cd036d1121be9cb3f96e5ab8ec0d16b8d2a2ec067f43261d60b7dd96f4e117cf36c728db621
+  languageName: node
+  linkType: hard
+
 "lru-cache@npm:^10.0.1, lru-cache@npm:^10.2.0":
   version: 10.4.3
   resolution: "lru-cache@npm:10.4.3"
@@ -8594,7 +8625,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^17.0.1":
+"react-is@npm:^17.0.1, react-is@npm:^17.0.2":
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 10c0/2bdb6b93fbb1820b024b496042cce405c57e2f85e777c9aabd55f9b26d145408f9f74f5934676ffdc46f3dcff656d78413a6e43968e7b3f92eea35b3052e9053
@@ -8633,6 +8664,21 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 10c0/d5780728c4d7a0966416d11f5079e5ba3ec28103fa9bc9e53a5676472bd01bc291c6b5357e5ea3c6c34743c5bf73abdadf625bdb2d8d3bb8b4b56ce699e37483
+  languageName: node
+  linkType: hard
+
+"react-native-modalfy@npm:^3.5.4":
+  version: 3.5.4
+  resolution: "react-native-modalfy@npm:3.5.4"
+  dependencies:
+    hoist-non-react-statics: "npm:^3.3.2"
+    react-is: "npm:^17.0.2"
+    use-memo-one: "npm:^1.1.2"
+  peerDependencies:
+    react: ">=16.8.3"
+    react-native: ">=0.59.0"
+    react-native-gesture-handler: ">=1.9.0"
+  checksum: 10c0/afe92cae87989025e3b834c9086a8f579d15ea4914da1c3f3f8cae482c1ef6be5d34d5566ad6199c40ec86614cb6b6fc762a9ca1d4627407684dd1b5d877a9f2
   languageName: node
   linkType: hard
 
@@ -10304,6 +10350,15 @@ __metadata:
   peerDependencies:
     react: ">=16.8"
   checksum: 10c0/66debcd5ac30aa0198669314177c7b30902787131c98c8130695555655426b43c678f84acc98a49284d50257396ed1ac4e257f3a5fc1d2a0f09ec741c08bfda9
+  languageName: node
+  linkType: hard
+
+"use-memo-one@npm:^1.1.2":
+  version: 1.1.3
+  resolution: "use-memo-one@npm:1.1.3"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 10c0/3d596e65a6b47b2f1818061599738e00daad1f9a9bb4e5ce1f014b20a35b297e50fe4bf1d8c1699ab43ea97f01f84649a736c15ceff96de83bfa696925f6cc6b
   languageName: node
   linkType: hard
 
