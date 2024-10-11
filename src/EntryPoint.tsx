@@ -1,15 +1,18 @@
 import {Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
-import {AppActions} from './store/redux/slice';
-import {useAppDispatch, useAppSelector} from './hooks/useRedux';
+// import {AppActions} from './store/redux/slice';
+import {useAppSelector} from './hooks/useRedux';
 import {countValueSelector} from './store/redux/selector';
+import {STACK_SCREENS} from './navigation/NavigationStack';
+import navigationService from './navigation/navigationService';
 
 const EntryPoint = () => {
-  const dispatch = useAppDispatch();
+  //   const dispatch = useAppDispatch();
   const count = useAppSelector(countValueSelector);
 
   const onHandlePressCount = () => {
-    dispatch(AppActions.countIncrement());
+    // dispatch(AppActions.countIncrement());
+    navigationService.navigate(STACK_SCREENS.HOME);
   };
 
   return (

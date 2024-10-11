@@ -3,7 +3,11 @@ import BootSplash from 'react-native-bootsplash';
 import {Provider} from 'react-redux';
 import {persistor, store} from './store';
 import {PersistGate} from 'redux-persist/integration/react';
-import EntryPoint from './EntryPoint';
+import {NavigationContainer} from '@react-navigation/native';
+import NavigationStack from './navigation/NavigationStack';
+import {navigationRef} from './navigation/navigationService';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {StyleSheet} from 'react-native';
 
 function App(): React.JSX.Element {
   useEffect(() => {
@@ -13,17 +17,26 @@ function App(): React.JSX.Element {
 
     init().finally(async () => {
       await BootSplash.hide({fade: true});
-      console.log('BootSplash has been hidden successfully');
     });
   }, []);
 
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <EntryPoint />
-      </PersistGate>
-    </Provider>
+    <GestureHandlerRootView style={style.container}>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <NavigationContainer ref={navigationRef}>
+            <NavigationStack />
+          </NavigationContainer>
+        </PersistGate>
+      </Provider>
+    </GestureHandlerRootView>
   );
 }
+
+const style = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default App;
