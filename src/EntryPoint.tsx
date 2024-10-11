@@ -30,6 +30,7 @@ const EntryPoint = () => {
     };
 
     init().finally(async () => {
+      dispatch(AppActions.requestCurrentWeatherData());
       await BootSplash.hide({fade: true});
     });
   }, [dispatch]);
