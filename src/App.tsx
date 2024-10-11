@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
-import {SafeAreaView, ScrollView} from 'react-native';
-
-import {Header} from 'react-native/Libraries/NewAppScreen';
 import BootSplash from 'react-native-bootsplash';
+import {Provider} from 'react-redux';
+import {persistor, store} from './store';
+import {PersistGate} from 'redux-persist/integration/react';
+import EntryPoint from './EntryPoint';
 
 function App(): React.JSX.Element {
   useEffect(() => {
@@ -17,11 +18,11 @@ function App(): React.JSX.Element {
   }, []);
 
   return (
-    <SafeAreaView>
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Header />
-      </ScrollView>
-    </SafeAreaView>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <EntryPoint />
+      </PersistGate>
+    </Provider>
   );
 }
 
